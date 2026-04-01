@@ -1,0 +1,12 @@
+For the AI Lab internal,
+prepare the following programs:
+1. Breadth First Search (BFS) *
+2. Depth First Search (DFS)  *
+3. Uniform Cost Search (UCS) *
+4. Tic-Tac-Toe Game *
+5. ----------------------------------8-Puzzle Problem 
+6. Water Jug Problem *
+7. Tower of Hanoi *
+8. --------------------------------- Alpha-Beta Pruning #
+9. 8-Queens Problem *
+

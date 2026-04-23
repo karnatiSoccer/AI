@@ -1,0 +1,21 @@
+4.k-means 
+import numpy as np 
+X = np.array([[1, 2], [1.5, 1.8], [5, 8], [8, 8], 
+[1, 0.6], [9, 11], [8, 2], [10, 2], [9, 3]]) 
+k = 3 
+np.random.seed(0) 
+centroids = X[np.random.choice(len(X), k, replace=False)] 
+def assign_clusters(X, centroids): 
+dists = np.array([[np.linalg.norm(x - c) for c in centroids] for x in X]) 
+return np.argmin(dists, axis=1) 
+def update_centroids(X, labels, k): 
+return np.array([X[labels == i].mean(axis=0) for i in range(k)]) 
+for i in range(100): 
+labels = assign_clusters(X, centroids) 
+new_centroids = update_centroids(X, labels, k) 
+if np.allclose(centroids, new_centroids): 
+print(f"Converged at iteration {i+1}") 
+break 
+centroids = new_centroids 
+print("\nFinal cluster labels:", labels) 
+print("Centroids:\n", centroids.round(2)) 
